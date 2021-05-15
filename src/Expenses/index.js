@@ -18,16 +18,16 @@ function Expenses({ handleSubmit, updateExpenseName, updateAmount }) {
         	<Label id="expense-name">Expense Name:</Label>
 			<Form.Input
 				type="text"
-				name="expense_name"
+				name="expenseName"
 				placeholder="Enter name of expense"
-				onChange={(e) => updateExpenseName(e)}
+				// onSubmit={(e) => updateExpenseName(e)}
 			/>
 			<Label id="expense-amount">Amount:</Label>
 			<Form.Input
 				type="number"
-				name="expense-amount"
+				name="expenseAmount"
 				placeholder="Enter amount"
-				onChange={(e) => updateAmount(e)}
+				// onSubmit={(e) => updateAmount(e)}
 			/>
 
         	<Modal.Actions>
