@@ -43,9 +43,9 @@ const App = () => {
   return (
     <div className="App">
       <h1>Expense Tracker</h1>
-      <Income handleSubmit2={handleSubmit2} />
-      <Expenses handleSubmit={handleSubmit} />
-      <TotalExpense name={name} appAmount={appAmount}/>
+	  <Income className="Modals" handleSubmit2={handleSubmit2} />
+	  <Expenses className="Modals" handleSubmit={handleSubmit} />
+      <TotalExpense name={name} appAmount={appAmount} income={income} />
     </div>
   );
 }

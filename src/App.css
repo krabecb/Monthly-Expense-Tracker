@@ -7,3 +7,11 @@
   flex-direction: column;
   align-items: center;
 }
+
+button.ui.button {
+  margin: 20px;
+}
+
+div.ui.items {
+  text-align: center;
+}

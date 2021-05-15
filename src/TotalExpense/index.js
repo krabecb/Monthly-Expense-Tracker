@@ -1,9 +1,11 @@
 import React from 'react'
+import RemainingBudget from '../RemainingBudget'
 import { Item } from 'semantic-ui-react'
 
-const TotalExpense = ({ name, appAmount }) => {
+const TotalExpense = ({ name, appAmount, income }) => {
   console.log(name)
   console.log(appAmount)
+
   const nameAndAmount = name.map((name, i) => {
     return(
       <Item key={i}>
@@ -26,6 +28,7 @@ const TotalExpense = ({ name, appAmount }) => {
       </Item.Group>  
 
       <h2>Total: {total}</h2>
+      <RemainingBudget total={total} income={income} />
     </div>
   )
 }
