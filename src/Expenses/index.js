@@ -27,7 +27,6 @@ function Expenses({ handleSubmit, updateExpenseName, updateAmount }) {
 				name="expenseAmount"
 				placeholder="Enter amount"
 			/>
-
         	<Modal.Actions>
           	<Button color='green' id="create-expense" type="submit">
             	Add Expense
