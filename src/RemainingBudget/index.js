@@ -6,7 +6,7 @@ const RemainingBudget = ({ total, income }) => {
 	
 	return(
 		<div>
-			<h2>Remaining Balance: {result}</h2>
+			<h2>Remaining Monthly Balance: {result}</h2>
 		</div>
 	)
 }

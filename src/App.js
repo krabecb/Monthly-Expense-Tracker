@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './App.css';
+import Flip from 'react-reveal/Flip';
 import Expenses from './Expenses'
 import Income from './Income'
 import TotalExpense from './TotalExpense'
@@ -42,7 +43,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Expense Tracker</h1>
+      <Flip left>
+      	<h1>BudgetR</h1>
+      </Flip>
 	  <Income className="Modals" handleSubmit2={handleSubmit2} />
 	  <Expenses className="Modals" handleSubmit={handleSubmit} />
       <TotalExpense name={name} appAmount={appAmount} income={income} />

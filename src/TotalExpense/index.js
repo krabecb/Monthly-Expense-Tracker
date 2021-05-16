@@ -27,7 +27,7 @@ const TotalExpense = ({ name, appAmount, income }) => {
         {nameAndAmount}
       </Item.Group>  
 
-      <h2>Total: {total}</h2>
+      <h2>Total Expenses: {total}</h2>
       <RemainingBudget total={total} income={income} />
     </div>
   )
