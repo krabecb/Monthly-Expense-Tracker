@@ -2,29 +2,31 @@ import React from 'react'
 import RemainingBudget from '../RemainingBudget'
 import { Item } from 'semantic-ui-react'
 
-const TotalExpense = ({ name, appAmount, income }) => {
-  console.log(name)
-  console.log(appAmount)
+const TotalExpense = ({ expenseInfo, income }) => {
 
-  const nameAndAmount = name.map((name, i) => {
+  //WE NEED TO LOOP SOMEHOW
+  let expenseList = expenseInfo.map((expense, i) => {
     return(
       <Item key={i}>
         <Item.Content>
-          <Item.Header as='a'>{name}</Item.Header>
-          <Item.Meta>{appAmount[i]}</Item.Meta>
+          <Item.Header as='a'>{expense.name}</Item.Header>
+          <Item.Meta>{expense.amount}</Item.Meta>
         </Item.Content>
       </Item>
     )
   })
 
-  const total = appAmount.reduce((a, c) => {
-    return a + c
+  let total = expenseInfo.reduce((acc, curr) => {
+    //curr represents the items in an array, which would be an object for this case
+    //acc represents our starting value, which we indicated as 0
+    console.log(curr)
+    return acc + curr.amount
   }, 0)
 
   return(
     <div>
       <Item.Group>
-        {nameAndAmount}
+        {expenseList}
       </Item.Group>  
 
       <h2>Total Expenses: {total}</h2>

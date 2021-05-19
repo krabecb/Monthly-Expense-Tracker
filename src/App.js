@@ -6,17 +6,17 @@ import Income from './Income'
 import TotalExpense from './TotalExpense'
 
 const App = () => {
-  const [name, setName] = useState([])
-  const [appAmount, setAppAmount] = useState([])
+
+  //REFACTOR: PERHAPS ONE USESTATE THAT STORES EVERYTHING AS AN OBJECT: {name: "Honda", amount: 620} 
+  //INCOME WILL PROBABLY HAVE IT'S OWN USESTATE, SO THAT COULD STAY THE SAME.
+  //THE MAIN GOAL IS TO BE ABLE TO DELETE NAME AND AMOUNT AT THE SAME TIME. 
+  const [expenseInfo, setExpenseInfo] = useState([])
   const [income, setIncome] = useState('')
 
   useEffect(() => {
-  	console.log(name)
-  }, [name])
-
-  useEffect(() => {
-  	console.log(appAmount)
-  }, [appAmount])
+    console.log("Here is expenseInfo:")
+  	console.log(expenseInfo)
+  }, [expenseInfo])
 
   useEffect(() => {
   	console.log(income)
@@ -25,14 +25,7 @@ const App = () => {
   const handleSubmit = (e) => {
   	e.preventDefault()
 
-  	let nameArr = []
-  	let amountArr = []
-
-  	nameArr.push(e.currentTarget.expenseName.value)
-  	amountArr.push(e.currentTarget.expenseAmount.value)
-
-  	setName(name => [...name, nameArr])
-  	setAppAmount(appAmount => [...appAmount, parseInt(amountArr)])
+  	setExpenseInfo(expenseInfo => [...expenseInfo, {name: e.currentTarget.expenseName.value, amount: parseInt(e.currentTarget.expenseAmount.value)}])
   }
 
    const handleSubmit2 = (e) => {
@@ -48,7 +41,7 @@ const App = () => {
       </Flip>
 	  <Income className="Modals" handleSubmit2={handleSubmit2} />
 	  <Expenses className="Modals" handleSubmit={handleSubmit} />
-      <TotalExpense name={name} appAmount={appAmount} income={income} />
+    <TotalExpense expenseInfo={expenseInfo} income={income} />
     </div>
   );
 }
