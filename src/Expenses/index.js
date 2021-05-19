@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import 'semantic-ui-css/semantic.min.css'
 import { Button, Modal, Form, Label } from 'semantic-ui-react'
 
-function Expenses({ handleSubmit, updateExpenseName, updateAmount }) {
+function Expenses({ handleSubmit }) {
   const [open, setOpen] = useState(false)
 
   return (
